@@ -9,6 +9,8 @@ public class SpawnManager : MonoBehaviour
     public GameObject enemyMelePrefab;
     public GameObject enemyRangePrefab;
 
+    public List<GameObject> coins = new List<GameObject> ();
+    public List<GameObject> enemes = new List<GameObject> ();
 
     public GameObject spawn(spawnType type, Vector3 position)
     {
@@ -17,12 +19,16 @@ public class SpawnManager : MonoBehaviour
         {
             case spawnType.coin:
                 temp = Instantiate(coinPrefab, position, Quaternion.identity);
+                coins.Add(temp);
+                Debug.Log(coins.Count);
                 break;
             case spawnType.enemyMele:
                 temp = Instantiate(enemyMelePrefab, position, Quaternion.identity);
+                enemes.Add(temp);
                 break;
             case spawnType.enemyRange:
                 temp = Instantiate(enemyRangePrefab, position, Quaternion.identity);
+                enemes.Add(temp);
                 break;
         }
         return temp;
