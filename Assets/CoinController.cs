@@ -25,11 +25,6 @@ public class CoinController : MonoBehaviour, IPickAble
     // Update is called once per frame
     void Update()
     {
-        disapearTimer += Time.deltaTime;
-        if(disapearTimer > disapearTime)
-        {
-            Debug.Log("CoinDisapear",this);
-        }
         transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y + rotaionSpeed * Time.deltaTime, 90f);
     }
 }

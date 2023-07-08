@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
     public SpawnManager spawnManager;
+    public Transform hero;
 
     [Range(0, 0.1f)] public float mouseSensitivity = 0.05f;
 
