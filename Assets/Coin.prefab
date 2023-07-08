@@ -112,7 +112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58f9edaf9c4652d4395b8dd176d2d4ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinScore: 0
+  coinScore: 10
   rotaionSpeed: 60
   disapearTime: 20
 --- !u!54 &8266830196947085072
