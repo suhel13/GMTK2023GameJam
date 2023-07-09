@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyAI : MonoBehaviour, IdamageAble
 {
     public float hp;
-    bool isAlive = true;
+    public bool isAlive = true;
     public float speed;
     public float attackRange;
     public float attackDamage;
