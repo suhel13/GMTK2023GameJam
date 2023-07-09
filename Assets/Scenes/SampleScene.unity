@@ -312,6 +312,26 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 188754358, guid: 401fe52bbc8b5604a9e8c50dfb13adf8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 806998745, guid: 401fe52bbc8b5604a9e8c50dfb13adf8, type: 3}
+      propertyPath: m_fontColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 806998745, guid: 401fe52bbc8b5604a9e8c50dfb13adf8, type: 3}
+      propertyPath: m_fontColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 806998745, guid: 401fe52bbc8b5604a9e8c50dfb13adf8, type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 806998745, guid: 401fe52bbc8b5604a9e8c50dfb13adf8, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 990811821, guid: 401fe52bbc8b5604a9e8c50dfb13adf8, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -327,6 +347,26 @@ PrefabInstance:
     - target: {fileID: 990811825, guid: 401fe52bbc8b5604a9e8c50dfb13adf8, type: 3}
       propertyPath: m_VersionIndex
       value: 15598
+      objectReference: {fileID: 0}
+    - target: {fileID: 1017886805, guid: 401fe52bbc8b5604a9e8c50dfb13adf8, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1017886805, guid: 401fe52bbc8b5604a9e8c50dfb13adf8, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1017886805, guid: 401fe52bbc8b5604a9e8c50dfb13adf8, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1017886805, guid: 401fe52bbc8b5604a9e8c50dfb13adf8, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278190080
+      objectReference: {fileID: 0}
+    - target: {fileID: 1532319623, guid: 401fe52bbc8b5604a9e8c50dfb13adf8, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6484448758751172414, guid: 401fe52bbc8b5604a9e8c50dfb13adf8, type: 3}
       propertyPath: m_RootOrder
@@ -391,6 +431,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: CyprianPrefab
       objectReference: {fileID: 0}
+    - target: {fileID: 2671770676978631957, guid: 69d00bd3419a6ef41b749a0c57eff3c5, type: 3}
+      propertyPath: uiMan
+      value: 
+      objectReference: {fileID: 1194720139}
+    - target: {fileID: 4347232955154455259, guid: 69d00bd3419a6ef41b749a0c57eff3c5, type: 3}
+      propertyPath: uiMan
+      value: 
+      objectReference: {fileID: 1194720139}
     - target: {fileID: 5067529335138546173, guid: 69d00bd3419a6ef41b749a0c57eff3c5, type: 3}
       propertyPath: m_ActionEvents.Array.data[13].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

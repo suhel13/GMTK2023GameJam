@@ -581,7 +581,7 @@ MonoBehaviour:
   maxPitch: 50
   mousePosWorld: {x: 0, y: 0, z: 0}
   spawnHeight: 3
-  maxTimeNoShoot: 5
+  maxTimeNoShoot: 4
   maxTimeImage: {fileID: 243221326}
   cannonBase: {fileID: 8323775408198728446}
   cannonBarel: {fileID: 8323775408198714016}
