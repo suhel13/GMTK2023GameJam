@@ -128,13 +128,24 @@ Light:
   m_CorrespondingSourceObject: {fileID: 705507994, guid: 401fe52bbc8b5604a9e8c50dfb13adf8, type: 3}
   m_PrefabInstance: {fileID: 1561860930276943274}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1194720139 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 26735247, guid: 401fe52bbc8b5604a9e8c50dfb13adf8, type: 3}
+  m_PrefabInstance: {fileID: 1561860930276943274}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab50d391de1c69f42adacae0b9821621, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!43 &1998991559
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-35378
+  m_Name: pb_Mesh-1420
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -315,7 +326,7 @@ PrefabInstance:
       objectReference: {fileID: 1998991559}
     - target: {fileID: 990811825, guid: 401fe52bbc8b5604a9e8c50dfb13adf8, type: 3}
       propertyPath: m_VersionIndex
-      value: 15571
+      value: 15580
       objectReference: {fileID: 0}
     - target: {fileID: 6484448758751172414, guid: 401fe52bbc8b5604a9e8c50dfb13adf8, type: 3}
       propertyPath: m_RootOrder
@@ -380,10 +391,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CyprianPrefab
       objectReference: {fileID: 0}
-    - target: {fileID: 1175840096953817545, guid: 69d00bd3419a6ef41b749a0c57eff3c5, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
+    - target: {fileID: 5067529335138546173, guid: 69d00bd3419a6ef41b749a0c57eff3c5, type: 3}
+      propertyPath: m_ActionEvents.Array.data[13].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1194720139}
     - target: {fileID: 5814055526840657312, guid: 69d00bd3419a6ef41b749a0c57eff3c5, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -426,10 +437,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5814055526840657312, guid: 69d00bd3419a6ef41b749a0c57eff3c5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8323775406804794486, guid: 69d00bd3419a6ef41b749a0c57eff3c5, type: 3}
-      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

@@ -20,6 +20,7 @@ public class UI_manager : MonoBehaviour
     private void Awake()
     {
         state = gameState.mainMenu;
+        Time.timeScale = 0;
     }
 
     // Update is called once per frame
