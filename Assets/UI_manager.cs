@@ -6,10 +6,22 @@ public class UI_manager : MonoBehaviour
 {
 
     public GameObject mainMenuPanel;
+    public GameObject InGamePanel;
+    public GameObject DiePanel;
+    public GameObject PausePanel;
+
+    public enum gameState { mainMenu, play, paused, endPanel}
+    gameState state;
 
     public TMPro.TextMeshProUGUI score;
+    public TMPro.TextMeshProUGUI end_score;
+
     // Start is called before the first frame update
-   
+    private void Awake()
+    {
+        state = gameState.mainMenu;
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -24,8 +36,47 @@ public class UI_manager : MonoBehaviour
     public void startGame()
     {
         mainMenuPanel.SetActive(false);
+        state = gameState.play;
+    }
 
+    public void showEndPanel()
+    {
+        InGamePanel.SetActive(false);
+        DiePanel.SetActive(true);
+        end_score.text = "Your Score " + GameManager.Instance.score;
+        state = gameState.endPanel;
+        
+    }
 
+    public void playAgain()
+    {
+        GameManager.Instance.score = 0;
+        InGamePanel.SetActive(true);
+        DiePanel.SetActive(false);
+        state = gameState.play;
+    }
+
+    public void pauseGame ()
+    {
+        Time.timeScale = 0;
+        PausePanel.SetActive(true);
+        state = gameState.paused;
+    }
+
+    public void continueGame()
+    {
+        Time.timeScale = 1;
+        PausePanel.SetActive(false);
+        state = gameState.play;
+
+    }
+
+    public void esc()
+    {
+        if (state == gameState.paused)
+            continueGame();
+        else if (state == gameState.play)
+            pauseGame();
     }
 
 }
