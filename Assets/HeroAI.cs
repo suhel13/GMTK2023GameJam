@@ -133,6 +133,7 @@ public class HeroAI : MonoBehaviour, IdamageAble
     void death()
     {
         isAlive = false;
+        hpbar.fillAmount = hp / maxHp;
         Debug.Log("Hero dead Game Over");
         uiMan.showEndPanel();
     }
