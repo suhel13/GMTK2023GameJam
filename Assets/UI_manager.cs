@@ -9,6 +9,7 @@ public class UI_manager : MonoBehaviour
     public GameObject InGamePanel;
     public GameObject DiePanel;
     public GameObject PausePanel;
+    public GameObject DescriptionPanel;
 
     public enum gameState { mainMenu, play, paused, endPanel}
     gameState state;
@@ -36,6 +37,7 @@ public class UI_manager : MonoBehaviour
 
     public void startGame()
     {
+        Time.timeScale = 1;
         mainMenuPanel.SetActive(false);
         state = gameState.play;
     }
@@ -78,6 +80,20 @@ public class UI_manager : MonoBehaviour
             continueGame();
         else if (state == gameState.play)
             pauseGame();
+    }
+
+    public void showDescription ()
+    {
+        DescriptionPanel.SetActive(true);
+        mainMenuPanel.SetActive(false);
+
+    }
+
+    public void hideDescription()
+    {
+        DescriptionPanel.SetActive(false);
+        mainMenuPanel.SetActive(true);
+
     }
 
 }
