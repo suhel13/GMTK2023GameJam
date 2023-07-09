@@ -10,6 +10,7 @@ public class HeroAI : MonoBehaviour, IdamageAble
 {
     public float detectionRange = 3f;
     bool isAlive = true;
+    
     public float hp;
     float maxHp;
     public float stamina;
@@ -19,6 +20,7 @@ public class HeroAI : MonoBehaviour, IdamageAble
     float cooldownTimer;
     public float staminaRecovery;
     public Image staminaBarImage;
+    public Image hpbar;
 
     public float pickUpRange;
     public float speed;
@@ -55,7 +57,7 @@ public class HeroAI : MonoBehaviour, IdamageAble
             else if (stamina > maxStamina)
                 stamina = maxStamina;
             staminaBarImage.fillAmount = stamina / maxStamina;
-
+            hpbar.fillAmount = hp / maxHp;
             if (cooldownTimer < attackCooldown)
                 cooldownTimer += Time.deltaTime;
 
