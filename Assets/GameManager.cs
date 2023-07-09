@@ -1,12 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
     public SpawnManager spawnManager;
+    public UI_manager uiMan;
     public Transform hero;
+
+    public Image HeroStaminaBar;
+    public Image HeroHpBar;
 
     public List<int> levelThreshold = new List<int>();
 
@@ -43,13 +48,18 @@ public class GameManager : MonoBehaviour
         {
             Destroy(coins);
         }
+        spawnManager.coins.Clear();
         foreach(GameObject enemy in spawnManager.enemes)
         { 
             Destroy(enemy);
         }
+        spawnManager.enemes.Clear();
 
         Destroy(hero.gameObject);
         hero = spawnManager.spawnHeroStartPos().transform;
+        hero.GetComponent<HeroAI>().staminaBarImage = HeroStaminaBar;
+        hero.GetComponent<HeroAI>().hpbar = HeroHpBar;
+        hero.GetComponent<HeroAI>().uiMan = uiMan;
 
     }
 

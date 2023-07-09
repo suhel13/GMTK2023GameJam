@@ -18,6 +18,8 @@ public class ArrowControler : MonoBehaviour
         if(collision.gameObject.GetComponent<IdamageAble>() != null)
         {
             collision.gameObject.GetComponent<IdamageAble>().takeDamage(damage);
+            if (collision.gameObject.tag == "Enemy")
+                GameManager.Instance.score += 10;
         }
         
         this.GetComponent<BoxCollider>().enabled = false;

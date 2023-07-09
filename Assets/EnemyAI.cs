@@ -11,6 +11,7 @@ public class EnemyAI : MonoBehaviour, IdamageAble
     public float attackRange;
     public float attackDamage;
     public float attackCooldown;
+    public float pointsDead;
     
     float cooldownTimer;
 
@@ -57,6 +58,7 @@ public class EnemyAI : MonoBehaviour, IdamageAble
     {
         Debug.Log("This Oponent is dead.", this.gameObject);
         isAlive = false;
+        GameManager.Instance.score += pointsDead;
         GameManager.Instance.spawnManager.enemes.Remove(this.gameObject);
         Destroy(this.gameObject);
     }

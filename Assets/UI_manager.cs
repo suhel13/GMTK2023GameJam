@@ -12,7 +12,7 @@ public class UI_manager : MonoBehaviour
     public GameObject DescriptionPanel;
 
     public enum gameState { mainMenu, play, paused, endPanel}
-    gameState state;
+    public gameState state;
 
     public TMPro.TextMeshProUGUI score;
     public TMPro.TextMeshProUGUI end_score;
@@ -57,6 +57,7 @@ public class UI_manager : MonoBehaviour
         InGamePanel.SetActive(true);
         DiePanel.SetActive(false);
         state = gameState.play;
+        GameManager.Instance.restartGame();
     }
 
     public void pauseGame ()
@@ -71,7 +72,6 @@ public class UI_manager : MonoBehaviour
         Time.timeScale = 1;
         PausePanel.SetActive(false);
         state = gameState.play;
-
     }
 
     public void esc()
@@ -86,14 +86,12 @@ public class UI_manager : MonoBehaviour
     {
         DescriptionPanel.SetActive(true);
         mainMenuPanel.SetActive(false);
-
     }
 
     public void hideDescription()
     {
         DescriptionPanel.SetActive(false);
         mainMenuPanel.SetActive(true);
-
     }
 
 }

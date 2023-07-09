@@ -582,7 +582,7 @@ MonoBehaviour:
   mousePosWorld: {x: 0, y: 0, z: 0}
   spawnHeight: 3
   maxTimeNoShoot: 5
-  maxTimeImage: {fileID: 0}
+  maxTimeImage: {fileID: 243221326}
   cannonBase: {fileID: 8323775408198728446}
   cannonBarel: {fileID: 8323775408198714016}
 --- !u!1 &2041347167
@@ -837,7 +837,7 @@ MonoBehaviour:
   coinPrefab: {fileID: 3886532918702098544, guid: 7e4cde1068da8a2499c9d55cd28e0f2c, type: 3}
   enemyMelePrefab: {fileID: 4112086338972229208, guid: ad09d7e17ef83aa458375c7d921947ff, type: 3}
   enemyRangePrefab: {fileID: 5190474485035461413, guid: c2d31d6d6172e5644878f3c00bdedafb, type: 3}
-  heroPrefab: {fileID: 0}
+  heroPrefab: {fileID: 8470705820628985757, guid: 9ff5dd070ec3c3a4bafbb1ee5bc72497, type: 3}
   coins: []
   enemes: []
   queue: 
@@ -1045,8 +1045,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnManager: {fileID: 0}
-  hero: {fileID: 0}
-  levelThreshold: 320000006400000096000000c8000000
+  uiMan: {fileID: 0}
+  hero: {fileID: 6166787517054975181}
+  HeroStaminaBar: {fileID: 1432953323}
+  HeroHpBar: {fileID: 8267268074887835477}
+  levelThreshold: 64000000c80000002c01000090010000
   score: 0
 --- !u!1 &8122519164062031153
 GameObject:

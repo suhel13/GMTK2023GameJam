@@ -199,7 +199,7 @@ GameObject:
   - component: {fileID: 7130984717820668667}
   m_Layer: 0
   m_Name: Enemy_Range
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -319,6 +319,7 @@ MonoBehaviour:
   attackRange: 10
   attackDamage: 1
   attackCooldown: 3
+  pointsDead: 10
   arrowSpeed: 4
   shootingPoint: {fileID: 5949885803058025462}
   arrowPrefab: {fileID: 5158345536434500821, guid: 5cbb285bff596e14cbbeb5c7dd632dec, type: 3}

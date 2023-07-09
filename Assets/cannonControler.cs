@@ -37,18 +37,21 @@ public class CannonControler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        NoShootTimer += Time.deltaTime;
-        if(NoShootTimer > maxTimeNoShoot)
+        if(GameManager.Instance.uiMan.state == UI_manager.gameState.play)
         {
-            forcedShoot();
-            NoShootTimer = 0;
+            NoShootTimer += Time.deltaTime;
+            if(NoShootTimer > maxTimeNoShoot)
+            {
+                forcedShoot();
+                NoShootTimer = 0;
+            }
+            maxTimeImage.fillAmount = 1 - (NoShootTimer / maxTimeNoShoot);
         }
-        maxTimeImage.fillAmount = 1 - (NoShootTimer / maxTimeNoShoot);
     }
 
     public void getMausePos(InputAction.CallbackContext ctx)
     {
-        if (ctx.performed && Time.timeScale > 0)
+        if (ctx.performed && Time.timeScale > 0 && GameManager.Instance.uiMan.state == UI_manager.gameState.play)
         {
             RaycastHit mousePoint;
             if(Physics.Raycast(Camera.main.ScreenPointToRay(ctx.ReadValue<Vector2>()), out mousePoint, Mathf.Infinity, whatIsGround))
@@ -67,7 +70,7 @@ public class CannonControler : MonoBehaviour
     }
     public void shoot(InputAction.CallbackContext ctx)
     {
-        if(Time.timeScale> 0 && ctx.performed)
+        if(Time.timeScale> 0 && ctx.performed && GameManager.Instance.uiMan.state == UI_manager.gameState.play)
         {
             GameManager.Instance.spawnManager.spawnNextInQueue(crosshair.position + (Vector3.up * spawnHeight));
             NoShootTimer = 0;
@@ -76,7 +79,7 @@ public class CannonControler : MonoBehaviour
 
     void lookAt(Transform target)
     {
-        if(Time.timeScale > 0)
+        if(Time.timeScale > 0 && GameManager.Instance.uiMan.state == UI_manager.gameState.play)
         {
             cannonBase.eulerAngles = new Vector3( cannonBase.eulerAngles.x, Mathf.Atan2(target.position.x - this.transform.position.x, target.position.z - this.transform.position.z) * 180f / Mathf.PI, cannonBase.eulerAngles.z);
             cannonBase.eulerAngles = new Vector3( cannonBase.eulerAngles.x, Mathf.Atan2(target.position.x - this.transform.position.x, target.position.z - this.transform.position.z) * 180f / Mathf.PI, cannonBase.eulerAngles.z);

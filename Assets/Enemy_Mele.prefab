@@ -321,7 +321,7 @@ GameObject:
   - component: {fileID: 4800427080788738716}
   m_Layer: 0
   m_Name: Enemy_Mele
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -440,6 +440,7 @@ MonoBehaviour:
   attackRange: 1.75
   attackDamage: 1
   attackCooldown: 1
+  pointsDead: 5
   arrowSpeed: 0
   shootingPoint: {fileID: 0}
   arrowPrefab: {fileID: 0}

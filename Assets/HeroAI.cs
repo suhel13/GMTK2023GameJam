@@ -36,6 +36,8 @@ public class HeroAI : MonoBehaviour, IdamageAble
     GameObject closestEnemy;
     float closestEnemyDistance;
 
+    public UI_manager uiMan;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -51,7 +53,6 @@ public class HeroAI : MonoBehaviour, IdamageAble
     {
         if (isAlive)
         {
-
             if (stamina < maxStamina)
                 stamina += staminaRecovery * Time.deltaTime;
             else if (stamina > maxStamina)
@@ -60,7 +61,6 @@ public class HeroAI : MonoBehaviour, IdamageAble
             hpbar.fillAmount = hp / maxHp;
             if (cooldownTimer < attackCooldown)
                 cooldownTimer += Time.deltaTime;
-
 
             if (GameManager.Instance.spawnManager.coins.Count > 0)
             {
@@ -127,12 +127,13 @@ public class HeroAI : MonoBehaviour, IdamageAble
     public void takeDamage(float damage)
     {
         hp -= damage;
-        if (hp < 0)
+        if (hp <= 0)
             death();
     }
     void death()
     {
         isAlive = false;
         Debug.Log("Hero dead Game Over");
+        uiMan.showEndPanel();
     }
 }
