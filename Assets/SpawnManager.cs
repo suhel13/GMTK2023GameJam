@@ -22,7 +22,7 @@ public class SpawnManager : MonoBehaviour
 
     public GameObject spawnHeroStartPos()
     {
-        return Instantiate(heroPrefab, Vector3.zero + Vector3.up * 1.5f, Quaternion.identity);
+        return Instantiate(heroPrefab, Vector3.zero + Vector3.up, Quaternion.identity);
     }
 
     public GameObject spawn(spawnType type, Vector3 position)
@@ -62,5 +62,6 @@ public class SpawnManager : MonoBehaviour
         spawn(queue[0], position);
         queue.RemoveAt(0);
         queue.Add(GameManager.Instance.generateNextEnemy());
+        updateQueueSpots();
     }
 }

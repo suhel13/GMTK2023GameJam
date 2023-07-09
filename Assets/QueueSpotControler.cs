@@ -13,14 +13,19 @@ public class QueueSpotControler : MonoBehaviour
         {
             case SpawnManager.spawnType.coin :
                 activeObject = GameManager.Instance.spawnManager.spawn(SpawnManager.spawnType.coin, this.transform.position + Vector3.up * 0.5f);
+                GameManager.Instance.spawnManager.coins.Remove(activeObject);
                 break;
+
             case SpawnManager.spawnType.enemyMele:
                 activeObject = GameManager.Instance.spawnManager.spawn(SpawnManager.spawnType.enemyMele, this.transform.position + Vector3.up * 0.5f);
                 activeObject.GetComponent<EnemyAI>().isAlive = false;
+                GameManager.Instance.spawnManager.enemes.Remove(activeObject);
                 break;
+
             case SpawnManager.spawnType.enemyRange:
                 activeObject = GameManager.Instance.spawnManager.spawn(SpawnManager.spawnType.enemyRange, this.transform.position + Vector3.up * 0.5f);
                 activeObject.GetComponent<EnemyAI>().isAlive = false;
+                GameManager.Instance.spawnManager.enemes.Remove(activeObject);
                 break;
         }
     }

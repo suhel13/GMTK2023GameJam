@@ -4,6 +4,7 @@ using System.Runtime.InteropServices;
 using UnityEditor;
 using UnityEditor.Search;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HeroAI : MonoBehaviour, IdamageAble
 {
@@ -17,6 +18,7 @@ public class HeroAI : MonoBehaviour, IdamageAble
     public float attackCooldown;
     float cooldownTimer;
     public float staminaRecovery;
+    public Image staminaBarImage;
 
     public float pickUpRange;
     public float speed;
@@ -52,6 +54,7 @@ public class HeroAI : MonoBehaviour, IdamageAble
                 stamina += staminaRecovery * Time.deltaTime;
             else if (stamina > maxStamina)
                 stamina = maxStamina;
+            staminaBarImage.fillAmount = stamina / maxStamina;
 
             if (cooldownTimer < attackCooldown)
                 cooldownTimer += Time.deltaTime;

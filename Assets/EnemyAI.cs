@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyAI : MonoBehaviour, IdamageAble
 {
@@ -18,6 +19,9 @@ public class EnemyAI : MonoBehaviour, IdamageAble
     public GameObject arrowPrefab;
     public enum enemyType {melle, range}
     public enemyType type;
+
+    public Slider attackCooldownSlider;
+    public GameObject canvas;
 
     Rigidbody rb;
 
@@ -44,6 +48,9 @@ public class EnemyAI : MonoBehaviour, IdamageAble
 
             Debug.Log(GameManager.Instance.hero);
             moveForward(GameManager.Instance.hero);
+
+            attackCooldownSlider.value = cooldownTimer / attackCooldown;
+            canvas.transform.eulerAngles = Vector3.zero;
         }
     }
     void death()
@@ -63,7 +70,10 @@ public class EnemyAI : MonoBehaviour, IdamageAble
         if (Vector3.Distance(this.transform.position, target.position) > attackRange)
         {
             transform.eulerAngles = new Vector3(0, transform.eulerAngles.y, transform.eulerAngles.z);
+            float rbVelY = rb.velocity.y;
             rb.velocity = new Vector3(target.position.x - transform.position.x, 0, target.position.z - transform.position.z).normalized * speed;
+            rb.velocity = new Vector3(rb.velocity.x, rbVelY, rb.velocity.z);
+
         }
         else
         {
@@ -72,7 +82,7 @@ public class EnemyAI : MonoBehaviour, IdamageAble
                 case enemyType.melle:
                     if (cooldownTimer >= attackCooldown)
                     {
-                        rb.velocity = Vector3.zero;
+                        rb.velocity = new Vector3(0, rb.velocity.y, 0);
                         GameManager.Instance.hero.GetComponent<IdamageAble>().takeDamage(attackDamage);
                         cooldownTimer = 0;
                     }
@@ -80,7 +90,7 @@ public class EnemyAI : MonoBehaviour, IdamageAble
                 case enemyType.range:
                     if (cooldownTimer >= attackCooldown)
                     {
-                        rb.velocity = Vector3.zero;
+                        rb.velocity = new Vector3(0, rb.velocity.y, 0);
                         GameObject tempArrow = Instantiate(arrowPrefab, shootingPoint.position, transform.rotation);
                         tempArrow.GetComponent<Rigidbody>().velocity = new Vector3(target.position.x - transform.position.x, 0, target.position.z - transform.position.z).normalized * arrowSpeed;
                         tempArrow.GetComponent<ArrowControler>().damage = attackDamage;
